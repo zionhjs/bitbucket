@@ -16,7 +16,7 @@ export class RestaurantsComponent implements OnInit {
     this.getRestaurants();
   }
 
-  show_delete(create_at: string) {
+  show_delete(create_at: String) {
     var time_dif = Date.now() - new Date(create_at)
     if (time_dif < 6000) {
       setTimeout(function () {
@@ -46,3 +46,6 @@ export class RestaurantsComponent implements OnInit {
   }
 
 }
+
+
+
