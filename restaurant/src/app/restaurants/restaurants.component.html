@@ -1,0 +1,27 @@
+<button [routerLink]="['/restaurants/new']">New Restaurant</button>
+<div class="container" style="height:450px; width:100%; border:1px solid salmon">
+  <table style="border:1px solid #0094ff;">
+    <thead>
+      <tr style="border:1px solid #0094ff;">
+        <td style="border:1px solid #0094ff;">Restaurant</td>
+        <td style="border:1px solid #0094ff;">Cuisine</td>
+        <td style="border:1px solid #0094ff;">Actions Available</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let restaurant of restaurants" style="border:1px solid #0094ff;">
+        <td style="border:1px solid #0094ff;">{{restaurant.name}}</td>
+        <td style="border:1px solid #0094ff;">{{restaurant.cuisine}}</td>
+        <td style="border:1px solid #0094ff;">
+          <button [routerLink]="[restaurant._id]">Read Reviews</button>
+          <button [routerLink]="[restaurant._id,'edit']">Update</button>
+          <button (click)="removeRestaurant(restaurant._id)" *ngIf="show_delete(restaurant.created_at)">
+            Delete</button>
+          <button (click)="removeRestaurant(restaurant._id)">
+            Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
+</div>

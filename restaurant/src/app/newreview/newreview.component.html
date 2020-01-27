@@ -1,0 +1,14 @@
+<h5>Write a review for {{reviewRestaurant.name}}</h5>
+<form (submit)="createReview()">
+  <div class="container" style="height:450px; width:100%; border:1px solid salmon">
+    <h5>Your Name:</h5>
+    <input type="text" name="customer" [(ngModel)]="newReview.customer" />
+    <h5>Stars:</h5>
+    <input type="number" name="stars" [(ngModel)]="newReview.stars" />
+    <h5>Your Review:</h5>
+    <input type="text" name="description" [(ngModel)]="newReview.description" />
+    <button [routerLink]="['/restaurants', reviewRestaurant._id]">Cancel</button>
+    <input type="submit" value="Submit" />
+    <p *ngIf="errors">errors happened:{{errors}}</p>
+  </div>
+</form>

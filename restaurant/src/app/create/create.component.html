@@ -1,0 +1,14 @@
+<a [routerLink]="['/restaurants']">Back</a>
+<h4>Register a restaurant</h4>
+<form (submit)="createRestaurant()">
+  <div class="container" style="height:450px; width:100%; border:1px solid salmon">
+    <h5>Restaurant Name:</h5>
+    <input type="text" name="name" [(ngModel)]="newRestaurant.name" />
+    <h5>Restaurant Cuisine:</h5>
+    <input type="text" name="cuisine" [(ngModel)]="newRestaurant.cuisine" />
+    <button [routerLink]="['/restaurants']">Cancel</button>
+    <input type="submit" value="Submit" />
+    <p *ngIf="errors">something happened:{{errors}}</p>
+    <p *ngIf="errors_">something happened:{{errors}}</p>
+  </div>
+</form>

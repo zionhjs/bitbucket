@@ -1,0 +1,21 @@
+<a [routerLink]="['/restaurants']">Back to Restaurants</a>
+<h3>Reviews for {{ reviewRestaurant.name }}</h3>
+<button [routerLink]="['review']">New Review</button>
+<div class="container" style="height:450px; width:100%; border:1px solid salmon">
+  <table style="border:1px solid #0094ff;">
+    <thead>
+      <tr style="border:1px solid #0094ff;">
+        <td style="border:1px solid #0094ff;">Customer</td>
+        <td style="border:1px solid #0094ff;">Stars</td>
+        <td style="border:1px solid #0094ff;">Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviews" style="border:1px solid #0094ff;">
+        <td style="border:1px solid #0094ff;">{{review.customer}}</td>
+        <td style="border:1px solid #0094ff;">{{review.stars}}</td>
+        <td style="border:1px solid #0094ff;">{{review.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
